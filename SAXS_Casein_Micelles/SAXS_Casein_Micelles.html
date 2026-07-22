@@ -32,7 +32,7 @@
 <h4>Before you start</h4>
 	<ul>
 	<li>Download and install <a href="https://www.sasview.org/" target="_blank">SasView</a>.</li>
-	<li>Download the <a href="casein_micelle.py" target="_blank">custom casein micelle model</a> used for data analysis in SasView.</li>
+	<li>Download the <a href="https://marketplace.sasview.org/models/167/" target="_blank">(beta) casein micelle model</a> used for data analysis in SasView.</li>
 	<li>It is required that you do the <a href="../Spheres/Spheres.html" target="_blank">Spheres tutorial</a> and the 
 		<a href="../PrimaryDataAnalysis/PrimaryDataAnalysis.html" target="_blank">Primary Data Analysis tutorial</a>. We recommend that you also do 
 		the <a href="../StructureFactors/StructureFactors.html" target="_blank">Structure Factors tutorial</a> and the <a href="../Polydispersity/Polydispersity.html" target="_blank">Polydispersity tutorial</a>.</li>
@@ -55,10 +55,22 @@ After completing this tutorial, you will be able to perform analysis of casein m
 		simply fitting a sphere model. Instead, successful modelling requires combining physical knowledge of the system with an iterative fitting strategy.
 	</p>
 
-<h4>Part I: The casein micelle model</h4>
+<h4>Part I: The casein micelle model in SasView</h4>
 	<p>
-	Insert casein micelle model etc. here 
-	<ul>
+	The casein micelle model which we will be using in this tutorial, will be a model in which the total scattering, $I_{total}$, is given as  
+	<ul>$$I_{total}=I_{aggr}+I_{micelle}+I_{int}+I_{P}+I_{C}+I_{PC}+I_{L}+I_{B},$$</ul>
+	where the first two terms are contributions from casein micelle aggregates and the overall casein micelle, respectively (<a href="https://marketplace.sasview.org/models/167/" target="_blank">click here</a> for a detailed description).</li>
+	To fit the data to our model, follow the steps in the box below.
+	<ol style="border-width:3px; border-style:solid;border-color:#697698; padding: 1em; padding-left: 40px; background-color: #f9f9f9"> 
+		<b>How to fit our casein micelle model to the SAXS data:</b>
+		<li>Open SasView and click the "Fitting" panel in the top left corner.</li>
+		<li>Choose the "Manage Custom Models" panel and click the "Add File..." button.</li>
+		<li>Find the casein micelle model on your PC and choose it.</li>
+		<li>Press "Close".</li>
+		<li>Load your data using the "Load Data" button in the Data Explorer panel and click the button that says "Send to" (fitting).</li>
+		<li>Check off any of the parameters you want to fit for using initial guesses (see part II for more details about initial guesses)</li>
+	</ol>
+	<p></p>
 	
 
 <h4>Part II: Write math</h4>
