@@ -62,24 +62,62 @@ After completing this tutorial, you will be able to perform analysis of casein m
 	where the first two terms are contributions from casein micelle aggregates and the overall casein micelle, respectively (<a href="https://marketplace.sasview.org/models/167/" target="_blank">click here</a> for a detailed description).</li>
 	To fit the data to our model, follow the steps in the box below.
 	<ol style="border-width:3px; border-style:solid;border-color:#697698; padding: 1em; padding-left: 40px; background-color: #f9f9f9"> 
-		<b>How to fit our casein micelle model to the SAXS data:</b>
+		<b>How to get ready for the casein micelle model fitting:</b>
 		<li>Open SasView and click the "Fitting" panel in the top left corner.</li>
 		<li>Choose the "Manage Custom Models" panel and click the "Add File..." button.</li>
 		<li>Find the casein micelle model on your PC and choose it.</li>
 		<li>Press "Close".</li>
 		<li>Load your data using the "Load Data" button in the Data Explorer panel and click the button that says "Send to" (fitting).</li>
-		<li>Check off any of the parameters you want to fit for using initial guesses (see part II for more details about initial guesses)</li>
 	</ol>
 	<p></p>
 	
 
-<h4>Part II: Write math</h4>
+<h4>Part II: Fitting and choosing initial parameter values</h4>
 	<p>
-	Math can be written in-line, e.g. $E=mc^2$ (<code>&dollar;E=mc^2&dollar;</code>) or $a=\sqrt{(b^2+c^2)}$ (<code>&dollar;a=\sqrt{(b^2+c^2)}&dollar;</code>), or it can be written on a separate line by use of double dollor signs, e.g.:<br>
-	<code>&dollar;&dollar;q = \frac{9.2\pi}{\lambda} \sin(\theta)&dollar;&dollar;</code><br>
-	which renders as:
-	$$q = \frac{9.2\pi}{\lambda} \sin(\theta)$$	
-	Try to <a href="Template.html"  target="_blank">download this file</a> (right-click > save file as), and correct the mistake in the definition of $q$.
+	Before jumping straight into fitting of the SAXS curve, start by inspecting the data. The purpose of inspecting the curve is not to determine every model parameter
+	directly from the data, but instead to identify the main structural features and regions of the data such as aggregation at low $q$, broad peaks, noisy regions etc. Furthermore, not every parameter in the model should be
+	estimated directly from the SAXS data. Several parameters describe known sample properties rather than structural features. These should normally be obtained 
+	from the sample preparation or from literature values and kept fixed during fitting. Some examples from the model that are known beforehand and hence should 
+	not be fitted are listed below.
+</p>
+
+<table>
+<tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    <th>Typical source</th>
+    <th>Fit?</th>
+</tr>
+
+<tr>
+    <td><i>c_P</i></td>
+    <td>Protein concentration</td>
+    <td>Measured experimentally</td>
+    <td>No</td>
+</tr>
+
+<tr>
+    <td><i>c_C</i></td>
+    <td>Calcium phosphate concentration</td>
+    <td>Sample composition</td>
+    <td>No</td>
+</tr>
+
+<tr>
+    <td><i>MW_P</td>
+    <td>Protein molecular weight</td>
+    <td>Literature</td>
+    <td>No</td>
+</tr>
+
+<tr>
+    <td><i>rho_C</i></td>
+    <td>Calcium phosphate density</td>
+    <td>Literature</td>
+    <td>No</td>
+</tr>
+
+</table>
 	</p>
 
 <h4>Part III: Insert images (and make it square if used as main illustration)</h4>
