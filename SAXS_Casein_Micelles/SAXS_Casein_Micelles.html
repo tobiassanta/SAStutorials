@@ -177,17 +177,19 @@ After completing this tutorial, you will be able to perform analysis of casein m
 	<p>
 		We will now be jumping into the actual procedure of fitting casein micelle SAXS data. To do this, choose the "Plugin Models" category and the "casein_micelle"
 		model name in the fit window of SasView. A number of fitting parameters will be listed in the window and we will now proceed with a step-by-step fitting strategy of the
-		data.
+		data. Before fitting a parameter, change its value manually and press "Compute". Observe which part of the scattering curve changes. This provides an indication
+		of the q-range to which the parameter is sensitive and helps identify a physically reasonable starting value. It is important to <bf>not use</bf> the built-in
+		SasView scale parameter for this model.
 		<ol style="border-width:3px; border-style:solid;border-color:#697698; padding: 1em; padding-left: 40px; background-color: #f9f9f9"> 
 			<b>Stepwise fitting strategy of casein micelle SAXS data:</b>
-			<li>Fit the background (parameter: <i>background</i>)</li>
-			<li>Fit the intensity of the aggregate contribution (parameter: <i>scale_power</i>)</li>
-			<li>If required, fit the slope of the aggregate contribution (parameter: <i>power</i>)</li>
-			<li>Fit the average micelle radius (parameter:<i>R_L</i>)</li>
-			<li>Fit the micelle radius and mcielle polydispersity together (parameters: <i>R_L</i> and <i>sigma_L</i>)</li>
-			<li>Fit the radius of the intermediate structures (parameter: <i>R_int</i>)</li>
-			<li>Fit the intermediate structures and polydispersity together (parameter: <i>R_int</i> and <i>sigma_int</i>)</li>
-			<li>Fit additional parameters only if systematic deviations remain.</li>
+			<li>Manually adjust <i>background</i> to describe the high-q baseline.</li>
+			<li>Adjust <i>scale_power</i> and, if necessary, <i>power</i> to describe the low-q upturn.</li>
+			<li>Fit these nuisance/background contributions.</li>
+			<li>Manually vary the average micelle radius, <i>R_L</i> and observe which region changes.</li>
+			<li>Fit <i>R_L</i>.</li>
+			<li>Add <i>sigma_L</i>.</li>
+			<li>Proceed to <i>R_int</i> then <i>sigma_int</i>.</li>
+			<li>Inspect residuals before introducing additional parameters.</li>
 		</ol>
 	</p>
 
