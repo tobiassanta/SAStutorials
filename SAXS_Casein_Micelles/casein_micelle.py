@@ -324,7 +324,7 @@ def P_poly_sph(q, R0, sigma, Rmin=1e-3, Rmax_factor=6, N=300, return_beta=False)
     V2 = V**2
 
     # denominator (normalization)
-    denom_P = np.trapz(D * V2, R) # form factor
+    denom_P = np.trapezoid(D * V2, R) # form factor
 
     # shape: (N_q, N_R)
     q = np.atleast_1d(q)
@@ -333,14 +333,14 @@ def P_poly_sph(q, R0, sigma, Rmin=1e-3, Rmax_factor=6, N=300, return_beta=False)
     # form factor
     A = 3*(np.sin(qR) - qR*np.cos(qR))/qR**3 # psi_sphere(q,R) vectorized
     P = A**2
-    num_P = np.trapz(D * V2 * P, R, axis=1)
+    num_P = np.trapzoid(D * V2 * P, R, axis=1)
     P_q = num_P / denom_P
     
     if not return_beta:
         return P_q
     else:
-        denom_A = np.trapz(D * V, R) # form factor amplitude
-        num_A = np.trapz(D * V * A, R, axis=1)
+        denom_A = np.trapezoid(D * V, R) # form factor amplitude
+        num_A = np.trapezoid(D * V * A, R, axis=1)
         A_q = num_A / denom_A
         beta_q = A_q**2 / P_q
         return P_q, beta_q
